@@ -1,0 +1,72 @@
+|ContadorMod4Mealyano
+sentido => Selector0.IN2
+sentido => Selector1.IN2
+sentido => Selector2.IN2
+sentido => Selector3.IN2
+sentido => Selector2.IN3
+sentido => Selector3.IN3
+sentido => Selector4.IN1
+sentido => Selector1.IN3
+sentido => Selector0.IN3
+sentido => s_bcd7s_infos[6].DATAIN
+sentido => s_bcd7s_infos[0].DATAIN
+sentido => s_bcd7s_infos[1].DATAIN
+sentido => s_bcd7s_infos[2].DATAIN
+sentido => s_bcd7s_infos[5].DATAIN
+sentido => Selector4.IN0
+clock_50mhz => CLOCK_DIVIDER:clkdiv.clkin
+s_bcd7s_num[6] << contagem[1].DB_MAX_OUTPUT_PORT_TYPE
+s_bcd7s_num[5] << Mux3.DB_MAX_OUTPUT_PORT_TYPE
+s_bcd7s_num[4] << contagem[0].DB_MAX_OUTPUT_PORT_TYPE
+s_bcd7s_num[3] << Mux2.DB_MAX_OUTPUT_PORT_TYPE
+s_bcd7s_num[2] << Mux1.DB_MAX_OUTPUT_PORT_TYPE
+s_bcd7s_num[1] << <GND>
+s_bcd7s_num[0] << Mux0.DB_MAX_OUTPUT_PORT_TYPE
+s_bcd7s_infos[6] << sentido.DB_MAX_OUTPUT_PORT_TYPE
+s_bcd7s_infos[5] << sentido.DB_MAX_OUTPUT_PORT_TYPE
+s_bcd7s_infos[4] << <GND>
+s_bcd7s_infos[3] << <GND>
+s_bcd7s_infos[2] << sentido.DB_MAX_OUTPUT_PORT_TYPE
+s_bcd7s_infos[1] << sentido.DB_MAX_OUTPUT_PORT_TYPE
+s_bcd7s_infos[0] << sentido.DB_MAX_OUTPUT_PORT_TYPE
+q[0] << contagem[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] << contagem[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ContadorMod4Mealyano|CLOCK_DIVIDER:clkdiv
+clkin => b.CLK
+clkin => count[0].CLK
+clkin => count[1].CLK
+clkin => count[2].CLK
+clkin => count[3].CLK
+clkin => count[4].CLK
+clkin => count[5].CLK
+clkin => count[6].CLK
+clkin => count[7].CLK
+clkin => count[8].CLK
+clkin => count[9].CLK
+clkin => count[10].CLK
+clkin => count[11].CLK
+clkin => count[12].CLK
+clkin => count[13].CLK
+clkin => count[14].CLK
+clkin => count[15].CLK
+clkin => count[16].CLK
+clkin => count[17].CLK
+clkin => count[18].CLK
+clkin => count[19].CLK
+clkin => count[20].CLK
+clkin => count[21].CLK
+clkin => count[22].CLK
+clkin => count[23].CLK
+clkin => count[24].CLK
+clkin => count[25].CLK
+clkin => count[26].CLK
+clkin => count[27].CLK
+clkin => count[28].CLK
+clkin => count[29].CLK
+clkin => count[30].CLK
+clkin => count[31].CLK
+clkout <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,69 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "s_bcd7s_num[6]",
+					"strict" : false
+				},
+				{
+					"name" : "s_bcd7s_num[5]",
+					"strict" : false
+				},
+				{
+					"name" : "s_bcd7s_num[4]",
+					"strict" : false
+				},
+				{
+					"name" : "s_bcd7s_num[3]",
+					"strict" : false
+				},
+				{
+					"name" : "s_bcd7s_num[2]",
+					"strict" : false
+				},
+				{
+					"name" : "s_bcd7s_num[0]",
+					"strict" : false
+				},
+				{
+					"name" : "s_bcd7s_infos[6]",
+					"strict" : false
+				},
+				{
+					"name" : "s_bcd7s_infos[5]",
+					"strict" : false
+				},
+				{
+					"name" : "s_bcd7s_infos[2]",
+					"strict" : false
+				},
+				{
+					"name" : "s_bcd7s_infos[1]",
+					"strict" : false
+				},
+				{
+					"name" : "s_bcd7s_infos[0]",
+					"strict" : false
+				},
+				{
+					"name" : "q[0]",
+					"strict" : false
+				},
+				{
+					"name" : "q[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sentido",
+					"strict" : false
+				},
+				{
+					"name" : "clock_50mhz",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

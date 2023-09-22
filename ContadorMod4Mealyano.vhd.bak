@@ -1,0 +1,72 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity ContadorMod4Mealyano is
+    Port (
+        clk : in  std_logic;
+        reset : in std_logic;
+        s : in std_logic; -- Entrada de sentido (0 para crescente, 1 para decrescente)
+        contador : out std_logic_vector(1 downto 0)
+    );
+end ContadorMod4Mealyano;
+
+architecture Behavioral of ContadorMod4Mealyano is
+    type State_Type is (S0, S1, S2, S3);
+    signal state, next_state : State_Type;
+    signal count : std_logic_vector(1 downto 0);
+begin
+    process (clk, reset, s)
+    begin
+        if reset = '1' then
+            state <= S0;   -- Reiniciar o estado em caso de reset
+            count <= "00"; -- Reiniciar o contador em caso de reset
+        elsif rising_edge(clk) then
+            state <= next_state; -- Atualizar o estado no flanco de subida do clock
+        end if;
+    end process;
+
+    process (state, s)
+    begin
+        case state is
+            when S0 =>
+                if s = '0' then
+                    next_state <= S1;
+                else
+                    next_state <= S3;
+                end if;
+                count <= "00"; -- Contador começa em 0
+
+            when S1 =>
+                if s = '0' then
+                    next_state <= S2;
+                else
+                    next_state <= S0;
+                end if;
+                count <= "01"; -- Contador incrementa
+
+            when S2 =>
+                if s = '0' then
+                    next_state <= S3;
+                else
+                    next_state <= S1;
+                end if;
+                count <= "10"; -- Contador incrementa
+
+            when S3 =>
+                if s = '0' then
+                    next_state <= S0;
+                else
+                    next_state <= S2;
+                end if;
+                count <= "11"; -- Contador incrementa
+
+            when others =>
+                next_state <= S0; -- Estado padrão em caso de erro
+                count <= "00";
+        end case;
+    end process;
+
+    contador <= count;
+end Behavioral;
